@@ -1,0 +1,40 @@
+
+
+h1 {
+  color: antiquewhite;
+  text-align: center;
+  font-size: 46px;
+  font-weight: bold;
+}
+
+h2, p {
+  color: antiquewhite;
+}
+
+label {
+  color: antiquewhite;
+  font-weight: bold;
+}
+
+.chat, .container {
+  margin: 0 auto 0 auto;
+  display: block;
+  text-align: center;
+
+}
+
+.chat {
+  max-width: 550px;
+}
+
+.message {
+  text-align: center;
+  max-width: 500px;
+  border-radius: 20px 20px 20px 0px;
+  background-color: lightsalmon;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Comic Sans MS";
+  margin-bottom: 10px;
+
+}

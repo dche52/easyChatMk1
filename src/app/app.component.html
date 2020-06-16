@@ -1,0 +1,19 @@
+<h1 id="head">Easy_Chat_Mk.1</h1>
+<div class="container">
+  <label for="nameInput">Представьтесь: </label>
+  <input type="text" id="nameInput" value="Прохожий" (change)="onNameChange()" required>
+  <br>
+  <label for="input">Ваше сообщение: </label>
+<input type="text" id="input" value="Привет !)" maxlength="99" required>
+  <br>
+<input type="submit" id="button" (click)="onClick()" value="Отправить">
+</div>
+<div class="chat">
+  <input type="submit" id="chatLoadBtn2" (click)="loadChat()" value="Следить за чатом">
+  <h2>Последние записи:  </h2>
+  <div class="message" *ngFor="let mess of messages, index as i">
+   {{mess}}
+  </div>
+</div>
+
+
