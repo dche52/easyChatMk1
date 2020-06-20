@@ -3,9 +3,9 @@ export class Messsage {
     return fetch('https://easychatmk1.firebaseio.com/messages.json',{
         method:'POST',
         body: JSON.stringify(message),
-        headers: {
-          'Content-Type': 'application/json',
-        }
+          headers: {
+            'Content-Type': 'application/json',
+          }
     })
       .then(response => response.json())
       .then(response => {

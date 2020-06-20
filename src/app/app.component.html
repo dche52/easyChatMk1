@@ -1,28 +1,9 @@
-//<h1 id="head">Easy_Chat_Mk.1</h1>
-
-<!--========================== v.1 ========================-->
-
-<!--<div class="container">-->
-<!--  <label for="nameInput">Представьтесь: </label>-->
-<!--  <input type="text" id="nameInput" value="Прохожий" (change)="onNameChange()" required>-->
-<!--  <br>-->
-<!--  <label for="input">Ваше сообщение: </label>-->
-<!--<input type="text" id="input" value="Привет !)" maxlength="99" required>-->
-<!--  <br>-->
-<!--<input type="submit" id="button" (click)="onClick()" value="Отправить">-->
-<!--</div>-->
-
-<!--========================== v.1 ========================-->
-
-<!--========================== v.2 ========================-->
+﻿<h1 id="head">Easy_Chat_Mk.1</h1>
 <app-message-form-component></app-message-form-component>
-<!--========================== v.2 ========================-->
-
 <div class="chat">
-  <input class="btn btn-success" type="submit" id="chatLoadBtn2" (click)="loadChat()" value="Следить за чатом">
-  <h2>Las ultimas notas:  </h2>
-  <div class="message" *ngFor="let mess of messages, index as i">
-   {{mess}}
+  <h2>Old York Times wrote:  </h2>
+  <div class="message" *ngFor="let message of messages index as i">
+   {{message}}
   </div>
 </div>
 

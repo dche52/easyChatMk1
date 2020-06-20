@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageForm } from '../message-form';
-import { Messsage } from '../message';
-import { NgModel } from '@angular/forms';
+import { Message } from '../message-form';
+import { HttpService } from '../http.servise';
 
 @Component({
   selector: 'app-message-form-component',
   templateUrl: './message-form-component.component.html',
-  styleUrls: ['./message-form-component.component.css']
+  styleUrls: ['./message-form-component.component.css'],
+  providers: [HttpService]
 })
-export class MessageFormComponentComponent {
 
-model = new MessageForm(1, 'The Whistler', 'Hello, Los Chupakabras !');
+export class MessageFormComponentComponent {
+constructor(private httpService: HttpService){}
+model = new Message('Angry Bird', 'Who saw green piggy\'\s ??');
 submitted = false;
 onSubmit() {
   this.submitted = true;
-  let checkA = Math.floor((Math.random() * 10));
-  let checkB = Math.floor((Math.random() * 10));
-  let check = prompt('Проверка на спам, введите :' + checkA + '+' + checkB, '');
+  const checkA: number = Math.floor((Math.random() * 10));
+  const checkB: number = Math.floor((Math.random() * 10));
+  const check = prompt('Проверка на спам, введите :' + checkA + '+' + checkB, '');
   if (check === (checkA + checkB).toString()) {
-    let dateNow = new Date();
-    let d = dateNow.toLocaleTimeString();
-    let sms = this.model.name + ': ' + this.model.textMessage + ' ' + d;
-    Messsage.create(sms);
+    const dateNow: any = new Date();
+    const dateLocal = dateNow.toLocaleTimeString();
+    const sms: string = this.model.name + ': ' + this.model.textMessage + ' ' + dateLocal;
+    this.httpService.postData(sms).subscribe(responseData => {console.log(responseData); } );
     this.model.textMessage = '';
     const audio = new Audio('/assets/icqsound.mp3');
     audio.autoplay = true;

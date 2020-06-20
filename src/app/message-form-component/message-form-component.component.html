@@ -5,14 +5,11 @@
       <input type="text" class="form-control" id="name" required minlength="3" maxlength="20"
              [(ngModel)]="model.name" name="name" >
     </div>
-
     <div class="form-group">
       <label for="textMessage">Your message</label>
       <input type="text" class="form-control" id="textMessage" required minlength="2" maxlength="99"
              [(ngModel)]="model.textMessage" name="textMessage">
     </div>
-
-    <button type="submit" class="btn btn-success" [disabled]="!messageForm.form.valid">Send</button>
-
+    <button type="submit" class="btn btn-success" >Send</button>
   </form>
 </div>
